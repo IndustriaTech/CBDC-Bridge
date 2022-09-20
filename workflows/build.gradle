@@ -76,3 +76,7 @@ task detekt(type: JavaExec) {
     def params = ['-i', input, '-c', config, '-b', baseline,'-ex', excludes, '-r', "html:$output", "-r", "xml:$outputXml",'-r',"sarif:$outputSarif"]
     args(params)
 }
+
+test {
+    useJUnitPlatform()
+}

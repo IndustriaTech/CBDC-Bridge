@@ -104,10 +104,3 @@ class PaymentDeserializer<T : Any> private constructor(
         return mapper.readValue(bytes, clazz.java)
     }
 }
-
-fun AppServiceHub.getHost(): String =
-    try {
-        getAppContext().config.getString(HOST_KEY)
-    } catch (e: CordappConfigException) {
-        HOST_DEFAULT
-    }

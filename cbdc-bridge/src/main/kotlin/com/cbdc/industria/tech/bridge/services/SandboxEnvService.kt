@@ -12,7 +12,7 @@ import net.corda.core.node.services.CordaService
 import net.corda.core.serialization.SingletonSerializeAsToken
 
 @CordaService
-class SandboxEnvCordaService(serviceHub: AppServiceHub) : SandboxEnvService(
+class SandboxEnvCordaService(private val serviceHub: AppServiceHub) : SandboxEnvService(
     executor = Executors.newFixedThreadPool(THREADS_COUNT),
     host = HOST_URL
 )

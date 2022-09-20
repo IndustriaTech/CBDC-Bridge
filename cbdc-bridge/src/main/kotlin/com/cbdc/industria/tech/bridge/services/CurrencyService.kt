@@ -14,12 +14,11 @@ import net.corda.core.node.services.CordaService
 import net.corda.core.serialization.SingletonSerializeAsToken
 
 @CordaService
-class CurrencyCordaService(serviceHub: AppServiceHub) : CurrencyService(
+class CurrencyCordaService(val serviceHub: AppServiceHub) : CurrencyService(
     executor = Executors.newFixedThreadPool(THREADS_COUNT),
     host = HOST_URL
 )
 
-@CordaService
 open class CurrencyService(
     private val executor: ExecutorService,
     private val host: String

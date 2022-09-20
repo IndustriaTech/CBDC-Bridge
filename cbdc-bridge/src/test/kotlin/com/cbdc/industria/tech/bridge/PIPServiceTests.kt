@@ -8,7 +8,6 @@ import com.cbdc.industria.tech.bridge.data.OpenAccountRequestBody
 import com.cbdc.industria.tech.bridge.data.RegisterPartyRequestBody
 import com.cbdc.industria.tech.bridge.enums.CurrencyCode
 import com.cbdc.industria.tech.bridge.enums.PartyType
-import com.cbdc.industria.tech.bridge.services.CBDCLedgerService
 import com.cbdc.industria.tech.bridge.services.CommercialBankService
 import com.cbdc.industria.tech.bridge.services.CurrencyService
 import com.cbdc.industria.tech.bridge.services.HOST_URL
@@ -200,7 +199,7 @@ class PIPServiceTests {
                                 currencyForEnv.id,
                                 comBank.id,
                                 it.id
-                            )
+                            ).getOrThrow()
                         }
                         comParties.forEach {
                             commercialBankService.deleteParty(
@@ -208,9 +207,9 @@ class PIPServiceTests {
                                 currencyForEnv.id,
                                 comBank.id,
                                 it.id
-                            )
+                            ).getOrThrow()
                         }
-                        commercialBankService.deleteCommercialBank(env.id, currencyForEnv.id, comBank.id)
+                        commercialBankService.deleteCommercialBank(env.id, currencyForEnv.id, comBank.id).getOrThrow()
                     }
 
                     pips.forEach { pipView ->

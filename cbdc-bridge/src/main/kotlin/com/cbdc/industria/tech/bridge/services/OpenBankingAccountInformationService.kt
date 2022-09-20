@@ -18,7 +18,7 @@ import net.corda.core.serialization.SingletonSerializeAsToken
 @CordaService
 class OpenBankingAccountInformationCordaService (private val serviceHub: AppServiceHub) : OpenBankingAccountInformationService(
     executor = Executors.newFixedThreadPool(THREADS_COUNT),
-    host = HOST_DEFAULT
+    host = HOST_URL
 )
 
 open class OpenBankingAccountInformationService(

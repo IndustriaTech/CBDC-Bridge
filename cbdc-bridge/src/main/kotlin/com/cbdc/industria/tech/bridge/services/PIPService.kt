@@ -26,7 +26,7 @@ import net.corda.core.serialization.SingletonSerializeAsToken
 @CordaService
 class PIPCordaService(private val serviceHub: AppServiceHub) : PIPService(
     executor = Executors.newFixedThreadPool(THREADS_COUNT),
-    host = HOST_DEFAULT
+    host = HOST_URL
 )
 
 open class PIPService(val executor: ExecutorService, val host: String) : SingletonSerializeAsToken() {

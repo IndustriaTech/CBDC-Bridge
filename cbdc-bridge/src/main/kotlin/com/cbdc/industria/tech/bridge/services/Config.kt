@@ -1,7 +1,5 @@
 package com.cbdc.industria.tech.bridge.services
 
-const val HOST_KEY = "host"
-const val HOST_DEFAULT = "localhost:8080"
 const val TIMEOUT_MILLISECONDS = 60_000
 const val AUTH_HEADER_KEY = "X-API-Key"
 const val THREADS_COUNT = 5

@@ -20,8 +20,12 @@ To be able to use the bridge with the configured token `val AUTH_TOKEN: String =
 
 In Linux you can set it into you `.profile` file under the home directory like that:
 
-`export BARCLAYS_AUTH_TOKEN="the-actual-token"`
+`export BARCLAYS_AUTH_TOKEN="the-actual-token"` and reboot your computer.
 
 In Windows you can go through the menu to Environment Variable and set it from there.
 
 https://docs.oracle.com/en/database/oracle/machine-learning/oml4r/1.5.1/oread/creating-and-modifying-environment-variables-on-windows.html#GUID-DD6F9982-60D5-48F6-8270-A27EC53807D0
+
+## Pre-Event Exercises
+
+Execute the `PreEventTests` to see that you are able to interact with the Barclays' API.

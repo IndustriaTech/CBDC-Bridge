@@ -15,7 +15,7 @@ import net.corda.core.serialization.SingletonSerializeAsToken
 @CordaSerializable
 class EcosystemCordaService(private val serviceHub: AppServiceHub) : EcosystemService(
     executor = Executors.newFixedThreadPool(THREADS_COUNT),
-    host = HOST_DEFAULT
+    host = HOST_URL
 )
 
 open class EcosystemService(
