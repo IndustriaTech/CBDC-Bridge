@@ -23,6 +23,7 @@ class CreatePartyAndAccountPIP(
     @Suspendable
     override fun call(): PartyAndAccountIds {
         val pipService = serviceHub.cordaService(PIPCordaService::class.java)
+
         val partyId = pipService.registerPartyWithPIP(
             xEnvId = envId,
             xCurrencyId = currencyId,
@@ -34,12 +35,16 @@ class CreatePartyAndAccountPIP(
             )
         ).getOrThrow().data.id
 
+        // TODO: Persist into Corda - PIP Party
+
         val accountId = pipService.openAccount(
             xEnvId = envId,
             xCurrencyId = currencyId,
             pipId = pipId,
             body = OpenAccountRequestBody(partyId)
         ).getOrThrow().data.id
+
+            // TODO: Persist into Corda - z
 
         return PartyAndAccountIds(partyId, accountId)
     }

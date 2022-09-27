@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-securechannel-dev-93218-authRole",
+      "UnauthRoleArn": "arn:aws:iam::026698075489:role/amplify-securechannel-dev-93218-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::026698075489:role/amplify-securechannel-dev-93218-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-securechannel-dev-93218-deployment",
+      "UnauthRoleName": "amplify-securechannel-dev-93218-unauthRole",
+      "StackName": "amplify-securechannel-dev-93218",
+      "StackId": "arn:aws:cloudformation:us-east-1:026698075489:stack/amplify-securechannel-dev-93218/7f502d80-2ce4-11ed-8355-0ec4de094f19",
+      "AmplifyAppId": "d2x6rdijgex3hd"
+    },
+    "categories": {
+      "auth": {
+        "securechannelea5237e3": {}
+      }
+    }
+  }
+}
