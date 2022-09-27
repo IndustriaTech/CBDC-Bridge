@@ -111,10 +111,10 @@ class PIPServiceTests {
         assertThat(accountDeposit.data.balance).isEqualTo(200)
 
         val accountWithdrawal = pipService.withdrawalFromAccount(
-            envId, currencyId, pipId, account.data.id, MakeWithdrawalRequestBody(199)
+            envId, currencyId, pipId, account.data.id, MakeWithdrawalRequestBody(200)
         ).getOrThrow()
 
-        assertThat(accountWithdrawal.data.balance).isEqualTo(1)
+        assertThat(accountWithdrawal.data.balance).isEqualTo(0)
 
         pipService.deletePIPAccount(envId, currencyId, pipId, account.data.id).getOrThrow()
         pipService.deletePIPParty(envId, currencyId, pipId, partyId).getOrThrow()
@@ -235,26 +235,4 @@ class PIPServiceTests {
             }
         }
     }
-
-//    @Test
-//    fun openAccount() {
-//        val response = pipService.openAccount(
-//            301,
-//            302,
-//            303,
-//            OpenAccountRequestBody(1)
-//        ).getOrThrow()
-//        println(response)
-//    }
-//
-//    @Test
-//    fun deletePIPAccount() {
-//        pipService.deletePIPAccount(301, 302, 303, 0)
-//    }
-//
-//    @Test
-//    fun getAccounts() {
-//        val accountsId = pipService.getAccounts(301, 302, 303).getOrThrow()
-//        println(accountsId)
-//    }
 }

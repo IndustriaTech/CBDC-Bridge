@@ -1,8 +1,8 @@
 package com.cbdc.industria.tech.bridge.services
 
 import com.cbdc.industria.tech.bridge.data.GetDomesticPaymentDetailsResponseBody
-import com.cbdc.industria.tech.bridge.data.MakeDomesticPaymentRequestBody
 import com.cbdc.industria.tech.bridge.data.MakeDomesticPaymentResponseBody
+import com.cbdc.industria.tech.bridge.data.PaymentInitiationDetails
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.ExecutorService
@@ -25,7 +25,7 @@ open class EcosystemService(
     fun createDomesticPayment(
         xEnvId: Long,
         currencyId: Long,
-        body: MakeDomesticPaymentRequestBody
+        body: PaymentInitiationDetails
     ): Future<MakeDomesticPaymentResponseBody> {
         val future = CompletableFuture<MakeDomesticPaymentResponseBody>()
 

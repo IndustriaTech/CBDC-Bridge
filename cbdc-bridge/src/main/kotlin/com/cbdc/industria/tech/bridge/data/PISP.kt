@@ -5,13 +5,6 @@ import com.cbdc.industria.tech.bridge.views.PaymentConsentView
 import net.corda.core.serialization.CordaSerializable
 
 @CordaSerializable
-data class MakeDomesticPaymentRequestBody(
-    val sourceAccountId: Long,
-    val destinationAccountId: Long,
-    val paymentAmountInCurrencyUnits: Long
-)
-
-@CordaSerializable
 data class MakeDomesticPaymentResponseBody(
     val data: MakeDomesticPaymentResponseData
 )
@@ -22,29 +15,29 @@ data class MakeDomesticPaymentResponseData(val id: Long)
 @CordaSerializable
 data class OpenBankingPaymentConsentCreationRequestBody(
     val paymentDetails: PaymentInitiationDetails,
-    val consentRequestingPartyId: RequestingPartyId,
-    val consentRequestingBankingEntityRef: RequestingBankingEntityRef,
-    val bankingEntityWhereConsentRequestingPartyIsRegisteredRef: BankingEntityWhereRequestingPartyIsRegisteredRef
+    val consentGrantingPartyId: ConsentGrantingPartyId,
+    val consentRequestingBankingEntityRef: ConsentRequestingBankingEntityRef,
+    val bankingEntityWhereConsentRequestingPartyIsRegisteredRef: BankingEntityWhereConsentGrantingPartyIsRegisteredRef
 )
 
 @CordaSerializable
 data class PaymentInitiationDetails(
     val sourceAccountId: Long,
     val destinationAccountId: Long,
-    val paymentAmount: Long
+    val paymentAmountInCurrencyUnits: Long
 )
 
 @CordaSerializable
-data class RequestingPartyId(val partyId: Long)
+data class ConsentGrantingPartyId(val partyId: Long)
 
 @CordaSerializable
-data class RequestingBankingEntityRef(
+data class ConsentRequestingBankingEntityRef(
     val bankingEntityType: String,
     val bankingEntityId: Long
 )
 
 @CordaSerializable
-data class BankingEntityWhereRequestingPartyIsRegisteredRef(
+data class BankingEntityWhereConsentGrantingPartyIsRegisteredRef(
     val bankingEntityType: String,
     val bankingEntityId: Long
 )

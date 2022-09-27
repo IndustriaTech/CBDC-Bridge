@@ -210,7 +210,7 @@ class CommercialBankServiceTests {
             bankId = commercialBankId,
             accountId = accountId,
             body = MakeDepositRequestBody(100)
-        )
+        ).getOrThrow()
 
         assertThat(
             commercialBankService.getAccount(
@@ -221,6 +221,14 @@ class CommercialBankServiceTests {
             ).getOrThrow().data.balance
         )
             .isEqualTo(100)
+
+        commercialBankService.withdrawalAccount(
+            xEnvId = environmentId,
+            xCurrencyId = currencyId,
+            bankId = commercialBankId,
+            accountId = accountId,
+            body = MakeWithdrawalRequestBody(100)
+        ).getOrThrow()
 
         commercialBankService.deleteAccount(
             xEnvId = environmentId,

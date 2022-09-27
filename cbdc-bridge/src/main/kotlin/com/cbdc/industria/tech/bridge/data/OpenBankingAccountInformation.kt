@@ -5,9 +5,9 @@ import net.corda.core.serialization.CordaSerializable
 
 @CordaSerializable
 data class OpenBankingAccountAccessConsentCreationRequestBody(
-    val requestingPartyId: RequestingPartyId,
-    val bankingEntityWhereRequestingPartyIsRegisteredRef: BankingEntityWhereRequestingPartyIsRegisteredRef,
-    val requestingBankingEntityRef: RequestingBankingEntityRef
+    val consentGrantingPartyId: ConsentGrantingPartyId,
+    val bankingEntityWhereConsentGrantingPartyIsRegisteredRef: BankingEntityWhereConsentGrantingPartyIsRegisteredRef,
+    val consentRequestingBankingEntityRef: ConsentRequestingBankingEntityRef
 )
 
 @CordaSerializable
