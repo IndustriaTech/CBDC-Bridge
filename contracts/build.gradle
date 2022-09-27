@@ -15,6 +15,9 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
     // Corda dependencies.
     cordaCompile "$cordaCoreReleaseGroup:corda-core:$cordaCoreVersion"
+    cordaCompile "$cordaTokenReleaseGroup:tokens-contracts:$cordaTokenVersion"
+    cordapp "$cordaAccountsReleaseGroup:accounts-contracts:$cordaAccountsReleaseVersion"
+
     testCompile "$cordaReleaseGroup:corda-node-driver:$cordaVersion"
 }
 

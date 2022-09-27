@@ -47,6 +47,10 @@ dependencies {
     testCompile "$cordaReleaseGroup:corda-node-driver:$cordaVersion"
 
     // CorDapp dependencies.
+    cordaCompile "$cordaTokenReleaseGroup:tokens-workflows:$cordaTokenVersion"
+    cordapp "$cordaConfidentialIdReleaseGroup:ci-workflows:$cordaConfidentialIdReleaseVersion"
+    cordapp "$cordaAccountsReleaseGroup:accounts-workflows:$cordaAccountsReleaseVersion"
+
     cordapp project(":contracts")
     cordapp project(":cbdc-bridge")
 }
